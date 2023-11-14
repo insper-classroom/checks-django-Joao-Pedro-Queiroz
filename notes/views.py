@@ -6,12 +6,12 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def index(request):
     if request.method == 'POST':
-        new_note = Note(title=request.POST.get('titulo'), content=request.POST.get('detalhes'))
+        new_note = Note(title=request.user.POST.get('titulo'), content=request.user.POST.get('detalhes'))
         new_note.save()
         return redirect('index')
     else:
-        all_notes = Note.objects.all().order_by("-created_at")
-        return render(request, 'notes/index.html', {'notes': all_notes})
+        user_notes = Note.objects.filter(author=request.user).order_by("-created_at")
+        return render(request, 'notes/index.html', {'notes': user_notes})
     
 
 def delete_note(request, note_id):
