@@ -9,6 +9,16 @@
   </head>
 
   <body>
+    <header>
+      {% if user.is_authenticated %}
+      <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+      <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Sair</button>
+      </form>
+      {% endif %}
+    </header>
+
     {% block content %} {% endblock %}
   </body>
 </html>

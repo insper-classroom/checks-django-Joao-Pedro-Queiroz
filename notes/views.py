@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Note
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def index(request):
     if request.method == 'POST':
         new_note = Note(title=request.POST.get('titulo'), content=request.POST.get('detalhes'))
