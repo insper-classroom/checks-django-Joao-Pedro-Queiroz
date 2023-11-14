@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def index(request):
     if request.method == 'POST':
-        new_note = Note(title=request.user.POST.get('titulo'), content=request.user.POST.get('detalhes'))
+        new_note = Note(title=request.POST.get('titulo'), content=request.POST.get('detalhes'), author=request.user)
         new_note.save()
         return redirect('index')
     else:

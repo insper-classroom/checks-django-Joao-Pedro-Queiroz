@@ -9,6 +9,7 @@
   {% for note in notes %}
   <li>{{ note.title }}</li>
   <p>{{ note.content }}</p>
+  <p>{{ note.author }}</p>
   <a class="link" href="anotacoes/{{note.id}}">Editar anotação</a>
   <a class="link" href="anotacoes/{{note.id}}/apagar">Apagar anotação</a>
   {% empty %}
