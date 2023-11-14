@@ -7,6 +7,12 @@
   {% for note in notes %}
   <li>{{ note.title }}</li>
   <p>{{ note.content }}</p>
+  <a href="anotacoes/{{note.id}}">
+    <p>Editar anotação</p>
+  </a>
+  <a href="anotacoes/{{note.id}}/apagar">
+    <p>Apagar anotação</p>
+  </a>
   {% empty %}
   <li>Nenhuma anotação por enquanto.</li>
   {% endfor %}
@@ -14,12 +20,12 @@
 
 <form method="post" action="/">
     {% csrf_token %}
-    <label for="titulo">Título</label>
-    <input id="titulo" type="text" name="titulo" />
-  
-    <label for="detalhes">Detalhes</label>
+    <label for="titulo">Title</label>
+    <input id="titulo" type="text" name="titulo">
+
+    <label for="detalhes">Content</label>
     <textarea id="detalhes" name="detalhes"></textarea>
   
-    <input type="submit" />
+    <input type="submit">
   </form>
 {% endblock %}
