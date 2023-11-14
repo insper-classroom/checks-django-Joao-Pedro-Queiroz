@@ -5,6 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Get-it</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'notes/reset/reset.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'notes/style/style.css' %}">
   </head>
 
@@ -12,9 +13,9 @@
     <header>
       {% if user.is_authenticated %}
       <h1>{{ user.first_name }} {{ user.last_name }}</h1>
-      <form action="{% url 'logout' %}" method="post">
+      <form class="logout" action="{% url 'logout' %}" method="post">
         {% csrf_token %}
-        <button type="submit">Sair</button>
+        <button class="button_logout" type="submit">Sair</button>
       </form>
       {% endif %}
     </header>

@@ -1,8 +1,79 @@
 body{
-    background-color: cornflowerblue;
+    background-color: rgb(124, 167, 246);
 }
 
 header{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 0rem 1rem 0.8rem;
+    margin: 1rem 0rem 1rem 0.8rem;
+}
+
+h1{
+    font-size: 280%;
+}
+
+h2{
+    font-size: 200%;
+    padding: 0rem 0rem 0rem 0.8rem;
+    margin: 0rem 0rem 0rem 0.8rem;
+}
+
+li{
+    font-size: 165%;
+    padding: 0.8rem 0rem 0.2rem 0.8rem;
+    margin: 0.8rem 0rem 0.2rem 0.8rem;
+}
+
+p{
+    font-size: 125%;
+    padding: 0.1rem 0rem 0.3rem 0.8rem;
+    margin: 0.1rem 0rem 0.3rem 0.8rem;
+}
+
+
+.logout{
+    padding: 0rem 0rem 0rem 0.3rem;
+    margin: 0rem 0rem 0rem 0.3rem;
+}
+
+.button_logout{
+    width: 50px;
+    height: 25px;
+}
+
+img{
+    width: 250px;
+    height: 130px;
+    padding: 0rem 0rem 1rem 3rem;
+    margin: 0rem 0rem 1rem 3rem;
+}
+
+.link{
+    color: rgb(130, 5, 5);
+    font-size: 105%;
+    margin: 0rem 0rem 0rem 1.6rem;
+}
+
+.create{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 0rem 1rem 0.8rem;
+    margin: 1rem 0rem 1rem 0.8rem;
+}
+
+.new{
+    padding: 0rem 0rem 0rem 0.2rem;
+    margin: 0rem 0rem 0rem 0.2rem;
+}
+
+.new_label{
+    padding: 0rem 0rem 0rem 0.4rem;
+    margin: 0rem 0rem 0rem 0.4rem;
+}
+
+.new_button{
+    margin: 0rem 0rem 0rem 0.6rem;
 }
