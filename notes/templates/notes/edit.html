@@ -1,15 +1,15 @@
 {% extends "notes/base.html" %}
 
 {% block content %}
-<h1>Editar nota {{note.id}}</h1>
-<form method="post" action="{{note.id}}">
+<h2>Editar nota {{note.id}}</h2>
+<form class="create" method="post" action="{{note.id}}">
     {% csrf_token %}
     <label for="titulo">Title</label>
-    <input id="titulo" value="{{note.title}}" type="text" name="titulo">
+    <input class="new" id="titulo" value="{{note.title}}" type="text" name="titulo">
   
-    <label for="detalhes">Content</label>
-    <textarea id="detalhes" name="detalhes">{{note.content}}</textarea>
+    <label class="new_label" for="detalhes">Content</label>
+    <textarea class="new" id="detalhes" name="detalhes">{{note.content}}</textarea>
   
-    <input type="submit">
+    <input class="new_button" type="submit">
   </form>
 {% endblock %}
