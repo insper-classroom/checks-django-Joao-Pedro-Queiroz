@@ -32,6 +32,7 @@ def delete_note(request, note_id):
     return redirect('index')
 
 
+@login_required
 def edit_note(request, note_id): 
     if request.method == 'POST':
         note = Note.objects.get(id=note_id)
@@ -44,6 +45,7 @@ def edit_note(request, note_id):
         return render(request, 'notes/edit.html', {'note': note})
     
 
+@login_required
 def tags(request, tag_id):
     tag = Tag.objects.get(id=tag_id)
     notes_tag = Note.objects.filter(tags=tag).order_by("-created_at")
