@@ -1,0 +1,20 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+<img src="{% static 'notes/img/logo-getit.png' %}">
+<h2>Get-it</h2>
+
+<ul>
+  {% for note in notes_tag %}
+  <li>{{ note.title }}</li>
+  <p>{{ note.content }}</p>
+  <p>{{ note.author }}</p>
+  <div class="tags">
+    {% for tag in note.tags.all %} <p>@{{ tag.tag }}</p> {% endfor %}
+  </div>
+  {% empty %}
+  <li>Nenhuma anotação por enquanto.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

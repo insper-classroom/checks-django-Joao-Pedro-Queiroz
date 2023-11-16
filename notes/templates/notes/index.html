@@ -10,6 +10,9 @@
   <li>{{ note.title }}</li>
   <p>{{ note.content }}</p>
   <p>{{ note.author }}</p>
+  <div class="tags">
+    {% for tag in note.tags.all %} <a class="link" href="tags/{{tag.id}}">@{{ tag.tag }}</a> {% endfor %}
+  </div>
   <a class="link" href="anotacoes/{{note.id}}">Editar anotação</a>
   <a class="link" href="anotacoes/{{note.id}}/apagar">Apagar anotação</a>
   {% empty %}
@@ -24,6 +27,9 @@
 
     <label class="new_label" for="detalhes">Content:</label>
     <textarea class="new" id="detalhes" name="detalhes"></textarea>
+
+    <label for="tag">Tag:</label>
+    <textarea class="new" id="tag" name="tag"></textarea>
   
     <input class="new_button" type="submit">
   </form>
